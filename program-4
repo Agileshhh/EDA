@@ -1,0 +1,9 @@
+year_sales = df.groupby('Year_of_Release')['Global_Sales'].sum()
+ 
+plt.figure(figsize=(10,5))
+plt.plot(year_sales.index, year_sales.values)
+ 
+plt.title("Video Game Sales Trend Over Years")
+plt.xlabel("Year")
+plt.ylabel("Global Sales")
+plt.show(

@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+ 
+# Load dataset
+df = pd.read_csv("Video_Games_Sales_as_at_22_Dec_2016.csv")
+ 
+# Remove missing values
+df = df.dropna(subset=['Global_Sales'])
+ 
+# Apply log transformation
+log_sales = np.log1p(df['Global_Sales'])
+ 
+plt.figure(figsize=(10,6))
+sns.histplot(log_sales, bins=40, kde=True)
+ 
+plt.title("Global Video Game Sales")
+plt.xlabel("Sales in Millons")
+plt.ylabel("Number of Games")
+ 
+plt.show()
+ 
+ 

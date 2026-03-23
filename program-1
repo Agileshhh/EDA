@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+ 
+df = pd.read_csv("Video_Games_Sales_as_at_22_Dec_2016.csv")
+ 
+top_games = df.sort_values(by='Global_Sales', ascending=False).head(10)
+ 
+plt.figure(figsize=(10,5))
+plt.bar(top_games['Name'], top_games['Global_Sales'])
+plt.xticks(rotation=90)
+plt.title("Top 10 Best Selling Video Games")
+plt.xlabel("Game Name")
+plt.ylabel("Global Sales (in millions)")
+plt.show()
